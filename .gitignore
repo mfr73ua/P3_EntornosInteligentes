@@ -1,0 +1,41 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+jupyter.log
+
+# Streamlit / secretos (el token de Kaggle no se versiona)
+.streamlit/secrets.toml
+.kaggle/
+kaggle.json
+
+# Datos crudos locales (outputs/ y figuras_poster/ SÍ se versionan)
+/WESAD/
+/data/
+/datos/
+
+# Sistema y editores
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+*.log
