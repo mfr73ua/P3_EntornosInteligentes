@@ -11,7 +11,6 @@ Este repositorio implementa un servicio de **apoyo al bienestar** para un espejo
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Requisitos previos](#requisitos-previos)
 - [Preparación del entorno](#preparación-del-entorno)
-- [Datos: WESAD](#datos-wesad)
 - [Cómo ejecutar todo](#cómo-ejecutar-todo)
 - [Archivos generados](#archivos-generados)
 - [Referencias y licencia](#referencias-y-licencia)
