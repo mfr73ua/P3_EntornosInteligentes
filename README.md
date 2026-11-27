@@ -61,47 +61,13 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Registrar el intérprete como kernel de Jupyter (y seleccionarlo después en *Kernel → Change Kernel*):
-
-```bash
-python -m ipykernel install --user --name p3-entornos --display-name "Python (P3 - Entornos Inteligentes)"
-```
-
 Para desactivar el entorno cuando termines: `deactivate`.
-
-## Datos: WESAD
-
-El notebook 01 descarga automáticamente el dataset con `kagglehub`:
-
-```python
-kagglehub.dataset_download("orvile/wesad-wearable-stress-affect-detection-dataset")
-```
-
-Si ya tienes WESAD en local, define `WESAD_PATH` **antes de abrir Jupyter**; la carpeta debe contener los directorios de sujeto con su fichero `.pkl` dentro, por ejemplo `S2/S2.pkl`, `S3/S3.pkl`, …, `S17/S17.pkl` (no existen S1 ni S12):
-
-```bash
-export WESAD_PATH="/ruta/a/WESAD"
-```
-
-Si Kaggle pide autenticación, genera un token en *Kaggle → Account → Create New API Token* y guárdalo en `~/.kaggle/kaggle.json` (`chmod 600 ~/.kaggle/kaggle.json`). El token no se versiona.
-
-Para usar otra carpeta de resultados, define `OUT_POSTER` en el mismo shell desde el que lances Jupyter o Streamlit (por defecto es `./outputs`):
-
-```bash
-export OUT_POSTER="/ruta/a/otra/carpeta/outputs"
-```
-
-Ambas variables deben estar definidas en todos los procesos que lean los resultados. El notebook 03, además, busca `outputs/` automáticamente cerca del directorio de trabajo.
 
 ## Cómo ejecutar todo
 
 El orden importa: el notebook 01 genera los archivos que consumen el resto.
 
 ### 1. Entrenamiento y exportación
-
-```bash
-jupyter lab
-```
 
 Abre `01_Entrenamiento.ipynb` y ejecuta **todas las celdas** (*Run → Run All Cells*). Descarga/lee WESAD, extrae ventanas de 60 s con paso de 30 s, compara baselines, modelos clásicos, ablaciones, personalización y modelos secuenciales con LOSO, y escribe `outputs/`. Puede tardar bastante en CPU.
 
